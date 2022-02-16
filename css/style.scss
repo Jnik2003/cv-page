@@ -1,0 +1,179 @@
+$fontSize: 14px;
+$wrapMaxWigth: 1140px;
+
+$colorText: #1E1D2E;
+$colorLightText: #606483;
+$colorButton: #FF9316;
+$colorOrange: #FFA438;
+$colorRed: #EF1C31;
+$colorGreen: #2F9626;
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'),
+        url('.././assets/fonts/Inter-Light.ttf');
+}
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'),
+        url('.././assets/fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'),
+        url('.././assets/fonts/Inter-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'),
+        url('.././assets/fonts/Inter-SemiBold.ttf');
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Arial", sans-serif;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 22px;
+    color: $colorText;
+    margin: 0 0 15px 0;
+}
+
+h4 {
+	font-weight: 500;
+    font-size: 16px;
+    color: $colorText;
+    margin: 0;
+}
+
+p {
+    font-weight: 300;
+    font-size: 14px;
+    color: $colorText;
+    // margin-bottom: 0;
+    // margin-top: 0;
+}
+
+ul {
+    // margin-left: 5px;
+    padding-left: 25px;
+    
+}
+
+li {
+    font-weight: 400;
+    font-size: $fontSize;
+    // list-style: none;
+    // margin-left: 0;
+    // text-decoration: none;
+}
+
+.light {
+    color: $colorLightText;
+}
+
+.green {
+    color: $colorGreen;
+}
+
+.container {
+    max-width: $wrapMaxWigth;
+    margin: 0 auto;
+}
+
+.back-image,
+.person__icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.main{
+	margin-top: 40px;
+}
+
+// -----------------------------
+.container-resume{
+	display: flex;
+	gap: 38px;
+}
+.resume {
+    max-width: 710px;
+    width: 100%;
+}
+
+.person__img-avatar {
+    width: 100px;
+    height: 100px;
+}
+
+.person__h4 {}
+
+.person__gender {
+    background-image: url(".././assets/svg/female.svg");
+    width: 20px;
+    height: 20px;
+}
+.person__time{
+	 background-image: url(".././assets/svg/time.svg");
+    width: 18px;
+    height: 18px;
+}
+.person__icon--file{
+	background-image: url(".././assets/svg/file.svg");
+	width: 24px;
+	height: 24px;
+}
+.person__icon--download{
+	background-image: url(".././assets/svg/download.svg");
+	width: 24px;
+	height: 24px;
+}
+.person__icon--printer{
+	background-image: url(".././assets/svg/printer.svg");
+	width: 24px;
+	height: 24px;
+}
+.person__icon{
+	cursor: pointer;
+}
+.person__title{
+	display: flex;
+	// justify-content: space-between;
+	gap: 20px;
+}
+.person__user-name{
+	align-self: left;
+}
+.person__location,
+.person__update{
+	display: flex;
+	align-items: center;
+}
+.person__icons{
+	display: flex;
+	justify-content: space-between;
+	gap: 23px;
+	 margin-left: auto;
+  margin-right: 0;
+}
+.person__additional-info{
+	width: 100%;
+	display: flex;
+	gap: 20px; 
+}
+.person__possibility--text-title{
+	max-width: 165px;
+	width: 100%;
+}
+.person__possibility--text-title, .person__possibility--text{
+	// min-height: 35px;
+}
