@@ -5,12 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600&display=swap" rel="stylesheet">
     <title>User CV</title>
 </head>
 
 <body>
-    <header class="header">
+    <header class="header-mobile">
         <div class="container">
+            <div class="header__arrow">
+            </div>
+            <div class="header-info">
+                <div class="header-info__img">
+                    <img src="./assets/img/avatar.jpg" alt="Avatar" class="person__img-avatar">
+                </div>
+                <div class="header-info__text">
+                    <p class="header-info__name">Комкова Екатерина</p>
+                    <div class="header-info__position">Художник-костюмер</div>
+                </div>
+            </div>
         </div>
     </header>
     <main class="main">
@@ -33,57 +47,237 @@
                             </div>
                         </div>
                         <div class="person__icons">
-                            <div class="person__icon person__icon--file"></div>
+                            <div class="person__icon person__icon--file">
+                            </div>
                             <div class="person__icon person__icon--download"></div>
                             <div class="person__icon person__icon--printer"></div>
                         </div>
                     </div>
-               
                     <div class="person__description">
                         <div class="person__basic-info">
                             <h3 class="h3">Художник-костюмер</h3>
                             <h4 class="h4">Искусство, развлечения, масс-медиа</h4>
-                            <ul>
-                            	<li>Дизайн, графика, живопись</li>
-                            	<li>Корректор, ретушер</li>
-                            	<li>Фотография</li>
+                            <ul class="list">
+                                <li>Дизайн, графика, живопись</li>
+                                <li>Корректор, ретушер</li>
+                                <li>Фотография</li>
                             </ul>
                         </div>
                         <div class="person__additional-info">
-                        	<div class="person__possibility">
-                        		<p class="person__possibility--text-title light">Занятость</p>
-                        		<p class="person__possibility--text-title light">График работы</p>
-                        		<p class="person__possibility--text-title light">Готовность к переезду</p>
-                        		
-                        	</div>
-                        	<div class="person__possibility--info">
-                        		<p class="person__possibility--text">Полная занятость, Временная работа</p>
-                        		<p class="person__possibility--text">Полный день, Гибкий график, Удаленная работа</p>
-                        		<p class="person__possibility--text">Москва, Воркута, Челябинск</p>
-                        	</div>
-                        	
+                            <div class="person__possibility">
+                                <p class="person__possibility--text-title light">Занятость</p>
+                                <p class="person__possibility--text-title light">График работы</p>
+                                <p class="person__possibility--text-title light">Готовность к переезду</p>
+                            </div>
+                            <div class="person__possibility--info">
+                                <p class="person__possibility--text">Полная занятость, Временная работа</p>
+                                <p class="person__possibility--text">Полный день, Гибкий график, Удаленная работа</p>
+                                <p class="person__possibility--text">Москва, Воркута, Челябинск</p>
+                            </div>
                         </div>
                     </div>
                 </section>
                 <section class="person-work">
-                	
+                    <div class="workplace" data-workplace='0'>
+                        <div class="block">
+                            <p class="block__text">Опыт работы:</p>
+                            <p class="block__data">2 года 5 месяцев</p>
+                        </div>
+                        <div class="period">
+                            <h4 class="period__date">Май 2013 — Ноябрь 2020</h4>
+                        </div>
+                        <div class="organization">
+                            <p class="organization__name">Лента, федеральная розничная сеть</p>
+                            <a href="https://lenta.ru" class="organization__link light">www.lenta.ru</a>
+                            <p class="organization__post">Менеджер по экономической безопасности</p>
+                        </div>
+                        <div class="resp">
+                            <p class="subtitle">Обязанности</p>
+                            <ul class="list">
+                                <li>Работа с лидами</li>
+                                <li>Проведение презентаций</li>
+                                <li>Поддержка кодовой базы системы платежных терминалов, включающей POS
+                                </li>
+                                <li>интерфейс пользователя, драйвера устройств, приложение мониторинга и SQL базу данных:
+                                </li>
+                                <li>Исправление багов;
+                                </li>
+                                <li>Внедрение поддержки новых устройств в т.ч. написание несколько драйверов для специфического оборудования, используя спецификации;
+                                </li>
+                                <li>Изменение внутреннего сетевого протокола приложения для интеграции с обновленным платежным шлюзом;
+                                </li>
+                                <li>Сбор и анализ статистики работы сети терминалов для оценки эффективности отдельных точек оплаты;
+                                </li>
+                                <li>Обработка пользовательских отзывов и предложений;
+                                </li>
+                                <li>Сборка дистрибутивов обновленний ПО;
+                                </li>
+                            </ul>
+                            <p class="hide-element light">Скрыть</p>
+                        </div>
+                        <div class="progress">
+                            <p class="subtitle">Достижения</p>
+                            <ul class="list">
+                                <li>Работа с лидами</li>
+                                <li>Проведение презентаций</li>
+                            </ul>
+                            <p class="show-element light">Показать полностью...</p>
+                        </div>
+                        <div class="dismiss">
+                            <p class="subtitle">Причины ухода</p>
+                            <ul class="list">
+                                <li>Работа с лидами</li>
+                                <li>Проведение презентаций</li>
+                            </ul>
+                            <p class="show-element light">Показать полностью...</p>
+                        </div>
+                    </div>
                 </section>
-
-
+                <section class="portfolio">
+                    <div class="block">
+                        <p class="block__text">Портфолио</p>
+                    </div>
+                    <div class="portfolio__out">
+                        <!-- <div class="buttons"> -->
+                        <!-- <button class="slider-prev">---</button> -->
+                        <button class="slider-next"></button>
+                        <!-- </div> -->
+                        <div class="slider">
+                            <div class="slider-line">
+                                <img class="slider-img" src="./assets/img/portfolio/0.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="0">
+                                <img class="slider-img" src="./assets/img/portfolio/1.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="1">
+                                <img class="slider-img" src="./assets/img/portfolio/2.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="2">
+                                <img class="slider-img" src="./assets/img/portfolio/3.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="3">
+                                <img class="slider-img" src="./assets/img/portfolio/4.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="4">
+                                <img class="slider-img" src="./assets/img/portfolio/5.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="5">
+                                <img class="slider-img" src="./assets/img/portfolio/6.jpg" alt="Наклейки детские" data-descr="Наклейки детские" data-sum="500 P" data-count="6">
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-
-
             <aside class="aside">
-            	<p>Правый блок</p>
+                <div class="salary">
+                    <p class="salary__summ">55 000 ₽</p>
+                    <button class="salary__menu"></button>
+                </div>
+                <div class="offer">
+                    <div class="offer__box">
+                        <div class="offer__items">
+                            <button class="offer__btn">Предложить вакансию</button>
+                            <div class="offer__check"></div>
+                        </div>
+                        <div class="offer__menu">
+                            <div class="offer__list hidden" data-offer="0">
+                                <div class="offer__img offer__img--think hidden"></div>
+                                <div class="offer__text hidden">Подумать</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="1">
+                                <div class="offer__img offer__img--video hidden"></div>
+                                <div class="offer__text hidden">Видеособеседование</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="2">
+                                <div class="offer__img offer__img--office hidden"></div>
+                                <div class="offer__text hidden">Интервью в офисе</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="3">
+                                <div class="offer__img offer__img--phonecall hidden"></div>
+                                <div class="offer__text hidden">Телефонное интервью</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="4">
+                                <div class="offer__img offer__img--test hidden"></div>
+                                <div class="offer__text hidden">Тестовое задание</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="5">
+                                <div class="offer__img offer__img--job hidden"></div>
+                                <div class="offer__text hidden">Предложение о работе</div>
+                            </div>
+                            <div class="offer__list  hidden" data-offer="6">
+                                <div class="offer__img offer__img--work hidden"></div>
+                                <div class="offer__text hidden">Выход на работу</div>
+                            </div>
+                        </div>
+                        <div class="offer__last">
+                        </div>
+                    </div>
+                    <div class="offer-history">
+                        <div class="offer-history__header">
+                            <div class="offer-history__title light">История откликов
+                            </div>
+                            <div class="offer-history__arrow"></div>
+                        </div>
+                        <div class="history-body">
+                            <div class="history-body__item  hide-history">
+                                <div class="history-body__img">
+                                    <figure class="history-body__figure" data-history="0">
+                                        <img src="./assets/svg/h-video.svg" alt="Videocall">
+                                        <figcaption>28.10.21</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="history-body__descr">
+                                    <p class="history-body__type light">Видеособеседование</p>
+                                    <p class="history-body__position">Продавец-кассир
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="history-body__item  hide-history">
+                                <div class="history-body__img">
+                                    <figure class="history-body__figure" data-history="1">
+                                        <img src="./assets/svg/h-offer.svg" alt="Offer">
+                                        <figcaption>28.10.21</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="history-body__descr">
+                                    <p class="history-body__type light">Отклик</p>
+                                    <p class="history-body__position">Продавец-кассир
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="history-body__item  hide-history">
+                                <div class="history-body__img">
+                                    <figure class="history-body__figure" data-history="2">
+                                        <img src="./assets/svg/h-call.svg" alt="Phonecall">
+                                        <figcaption>28.10.21</figcaption>
+                                    </figure>
+                                </div>
+                                <div class="history-body__descr">
+                                    <p class="history-body__type light">Телефонное интервью</p>
+                                    <p class="history-body__position">Продавец-кассир
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </aside>
-
-
         </div>
     </main>
     <footer class="footer">
         <div class="container">
         </div>
     </footer>
+    <div class="note close-note">
+        <div class="note__wrap">
+            <h4>Ваша заметка о кандидате</h4>
+            <form>
+                <textarea class="note__body"></textarea>
+                <div class="note__btns">
+                    <button class="cancel">Отмена</button>
+                    <button class="save">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal__slider">
+            <div class="modal__slider-line">
+            </div>
+            <button class="modal__prev"></button>
+            <button class="modal__next"></button>
+        </div>
+        <span class="close-modal"></span>
+    </div>
+    <script src="./js/objMenu.js"></script>
     <script src="./js/index.js"></script>
 </body>
 
