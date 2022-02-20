@@ -33,6 +33,48 @@ window.onload = function() {
         sliderLine.style.left = -offset + 'px';
     }
 
+    // --- добавим свайп ---------
+
+                function startSwipe(elem) {
+                    elem.addEventListener('touchstart', handleTouchStart, false);
+                    
+                    elem.addEventListener('touchmove', handleTouchMove, false);
+                }
+                
+
+                function stopSwipe(elem) {
+                    elem.removeEventListener('touchstart', handleTouchStart, false);
+                    
+                    elem.removeEventListener('touchmove', handleTouchMove, false);
+                }
+                startSwipe(slider)
+
+                function handleTouchStart(event) {
+                    // координалы тычка пальцем                     
+                    x1 = event.touches[0].clientX;
+                    y1 = event.touches[0].clientY;
+
+                }
+
+                function handleTouchMove(event) {
+                    if (!x1 || !y1) {
+                        return;
+                    }
+                    x2 = event.touches[0].clientX;
+                    y2 = event.touches[0].clientY;
+                    // clearInterval(timer);
+                    if (x2 < x1 && Math.abs(y1 - y2) < 7) {                        
+                        fNext();
+                        stopSwipe(slider);
+                        setTimeout(() => {
+                            startSwipe(slider)
+                        }, 300)
+                    }                   
+                }
+                // -------------
+
+
+
     // --- modal ---
 
     sliderLine.addEventListener('click', modal);
@@ -133,18 +175,21 @@ window.onload = function() {
                     document.querySelector('.modal__slider-line').style.transform = `translateX(-${count * width}px`;
                 }
 
-                // --- добавим свайп ---------
-                function startSwipe() {
-                    modalSlider.addEventListener('touchstart', handleTouchStart, false);
-                    console.log(slider)
-                    modalSlider.addEventListener('touchmove', handleTouchMove, false);
-                }
-                startSwipe();
+                startSwipe(modalSlider);
+                
 
-                function stopSwipe() {
-                    modalSlider.removeEventListener('touchstart', handleTouchStart, false);
-                    console.log(slider)
-                    modalSlider.removeEventListener('touchmove', handleTouchMove, false);
+                 // --- добавим свайп ---------
+                function startSwipe(elem) {
+                    elem.addEventListener('touchstart', handleTouchStart, false);
+                    
+                    elem.addEventListener('touchmove', handleTouchMove, false);
+                }
+                
+
+                function stopSwipe(elem) {
+                    elem.removeEventListener('touchstart', handleTouchStart, false);
+                    
+                    elem.removeEventListener('touchmove', handleTouchMove, false);
                 }
 
 
@@ -163,16 +208,24 @@ window.onload = function() {
                     y2 = event.touches[0].clientY;
                     // clearInterval(timer);
                     if (x2 < x1 && Math.abs(y1 - y2) < 7) {
-                        modalNext();
-                        stopSwipe();
-                        setTimeout(startSwipe, 300)
+                        modalNext();                        
+                        stopSwipe(modalSlider);
+                        setTimeout(() => {
+                            startSwipe(modalSlider)
+                        }, 300)
                     }
                     if (x2 > x1 && Math.abs(y1 - y2) < 7) {
                         modalPrev();
-                         stopSwipe();
-                        setTimeout(startSwipe, 300)
+                        stopSwipe(modalSlider);
+                        setTimeout(() => {
+                            startSwipe(modalSlider)
+                        }, 300)
                     }
                 }
+                // -------------
+
+
+
             })
             .then(() => {
                 setTimeout(coordClose, 1500)
@@ -181,6 +234,8 @@ window.onload = function() {
 
 
     }
+
+     
 
     function coordClose() {
         return new Promise((resolve) => {
