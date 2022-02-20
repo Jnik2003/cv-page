@@ -707,7 +707,7 @@ li {
 
 .header-mobile {
   width: 100%;
-  height: 48px;
+  min-height: 48px;
 }
 .header-mobile .container {
   display: flex;
@@ -800,5 +800,17 @@ li {
 
   .offer__box {
     margin: 0 auto;
+  }
+
+  .modal__next {
+    display: none;
+  }
+
+  .modal__prev {
+    display: none;
+  }
+
+  .slider-next {
+    display: none;
   }
 }
