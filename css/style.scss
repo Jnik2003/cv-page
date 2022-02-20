@@ -279,6 +279,7 @@ li {
     left: 0;
     transition: 0.5s;
 
+
 }
 
 .portfolio {
@@ -717,11 +718,12 @@ li {
     margin: 0;
     border-radius: 0.5rem 0.5rem 0 0;
 
+
     img {
         max-width: 450px;
         width: 100%;
         border-radius: 0.5rem 0.5rem 0 0;
-        display: block;
+        display: block;        
     }
 
     figcaption {
@@ -880,6 +882,13 @@ li {
     }
     .modal__slider{
         margin: 110px auto;
+    }
+    .offer__box{
+        margin: 0 auto;
+    }
+    .slider-line{
+        
+
     }
     
 }
