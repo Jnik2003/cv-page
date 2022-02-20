@@ -11,67 +11,79 @@ window.onload = function() {
     let imgs = document.querySelectorAll('.slider-img')
 
 
-
-
     let offset = 0;
     sliderNext.addEventListener('click', fNext);
 
     function countCl() {
-        countClick = imgs.length - Math.floor(slider.offsetWidth / (img.offsetWidth + 10))
+        visibleImgs = imgs.length - Math.floor(slider.offsetWidth / (img.offsetWidth + 10))
+        return visibleImgs;
     }
     countCl();
     window.addEventListener('resize', countCl);
 
     function fNext() {
-        countClick--;
         offset += img.offsetWidth + 10;
-        if (countClick < 0) {
+        if (offset > (img.offsetWidth + 10) * countCl()) {
             offset = 0;
-            countClick = imgs.length - Math.floor(slider.offsetWidth / (img.offsetWidth + 10))
+        }
+        sliderLine.style.left = -offset + 'px';
+    }
+
+    function fPrev() {
+        offset -= img.offsetWidth + 10;
+        if (offset < 0) {
+            offset = (img.offsetWidth + 10) * (imgs.length - 1);
         }
 
         sliderLine.style.left = -offset + 'px';
     }
 
     // --- добавим свайп ---------
+    function startSwipe(elem) {
+        elem.addEventListener('touchstart', handleTouchStart, false);
 
-                function startSwipe(elem) {
-                    elem.addEventListener('touchstart', handleTouchStart, false);
-                    
-                    elem.addEventListener('touchmove', handleTouchMove, false);
-                }
-                
+        elem.addEventListener('touchmove', handleTouchMove, false);
+    }
 
-                function stopSwipe(elem) {
-                    elem.removeEventListener('touchstart', handleTouchStart, false);
-                    
-                    elem.removeEventListener('touchmove', handleTouchMove, false);
-                }
+
+    function stopSwipe(elem) {
+        elem.removeEventListener('touchstart', handleTouchStart, false);
+
+        elem.removeEventListener('touchmove', handleTouchMove, false);
+    }
+    startSwipe(slider)
+
+    function handleTouchStart(event) {
+        // координалы тычка пальцем                     
+        x1 = event.touches[0].clientX;
+        y1 = event.touches[0].clientY;
+
+    }
+
+    function handleTouchMove(event) {
+        if (!x1 || !y1) {
+            return;
+        }
+        x2 = event.touches[0].clientX;
+        y2 = event.touches[0].clientY;
+        // clearInterval(timer);
+        if (x2 < x1 && Math.abs(y1 - y2) < 7) {
+            // modalNext();
+            fNext();
+            stopSwipe(slider);
+            setTimeout(() => {
                 startSwipe(slider)
-
-                function handleTouchStart(event) {
-                    // координалы тычка пальцем                     
-                    x1 = event.touches[0].clientX;
-                    y1 = event.touches[0].clientY;
-
-                }
-
-                function handleTouchMove(event) {
-                    if (!x1 || !y1) {
-                        return;
-                    }
-                    x2 = event.touches[0].clientX;
-                    y2 = event.touches[0].clientY;
-                    // clearInterval(timer);
-                    if (x2 < x1 && Math.abs(y1 - y2) < 7) {                        
-                        fNext();
-                        stopSwipe(slider);
-                        setTimeout(() => {
-                            startSwipe(slider)
-                        }, 300)
-                    }                   
-                }
-                // -------------
+            }, 300)
+        }
+        if (x2 > x1 && Math.abs(y1 - y2) < 7) {
+            fPrev();
+            stopSwipe(slider);
+            setTimeout(() => {
+                startSwipe(slider)
+            }, 300)
+        }
+    }
+    // -------------
 
 
 
@@ -176,19 +188,19 @@ window.onload = function() {
                 }
 
                 startSwipe(modalSlider);
-                
 
-                 // --- добавим свайп ---------
+
+                // --- добавим свайп ---------
                 function startSwipe(elem) {
                     elem.addEventListener('touchstart', handleTouchStart, false);
-                    
+
                     elem.addEventListener('touchmove', handleTouchMove, false);
                 }
-                
+
 
                 function stopSwipe(elem) {
                     elem.removeEventListener('touchstart', handleTouchStart, false);
-                    
+
                     elem.removeEventListener('touchmove', handleTouchMove, false);
                 }
 
@@ -208,7 +220,7 @@ window.onload = function() {
                     y2 = event.touches[0].clientY;
                     // clearInterval(timer);
                     if (x2 < x1 && Math.abs(y1 - y2) < 7) {
-                        modalNext();                        
+                        modalNext();
                         stopSwipe(modalSlider);
                         setTimeout(() => {
                             startSwipe(modalSlider)
@@ -235,7 +247,7 @@ window.onload = function() {
 
     }
 
-     
+
 
     function coordClose() {
         return new Promise((resolve) => {

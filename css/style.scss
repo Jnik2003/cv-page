@@ -607,7 +607,7 @@ li {
 .note {
     max-width: 402px;
     width: 80%;
-    height: 345px;   
+    height: 345px;
     position: fixed;
     background-color: #F5F5F5;
     border-radius: 1rem;
@@ -723,7 +723,7 @@ li {
         max-width: 450px;
         width: 100%;
         border-radius: 0.5rem 0.5rem 0 0;
-        display: block;        
+        display: block;
     }
 
     figcaption {
@@ -798,7 +798,7 @@ li {
 
 .header-mobile {
     width: 100%;
-    height: 48px;
+    min-height: 48px;
 
     .container {
         display: flex;
@@ -819,7 +819,8 @@ li {
     background-size: cover;
     cursor: pointer;
 }
-.header-mobile{
+
+.header-mobile {
     display: none;
 }
 
@@ -827,10 +828,12 @@ li {
     .aside {
         display: none;
     }
-    .person__icon--printer{
+
+    .person__icon--printer {
         display: none;
     }
-    .header-mobile{
+
+    .header-mobile {
         display: block;
         position: fixed;
         top: 0;
@@ -838,57 +841,77 @@ li {
         z-index: 10;
         padding: 5px 0;
     }
-    .header-info{
+
+    .header-info {
         display: flex;
         // justify-content: space-around;
         align-items: center;
         margin-left: 10px;
     }
-    .header-info__img{
-        img{
+
+    .header-info__img {
+        img {
             width: 40px;
             height: 40px;
             margin-right: 10px;
         }
     }
-    .person__icons{
+
+    .person__icons {
         // margin: 0;
     }
-    .header-info__name{
+
+    .header-info__name {
         font-size: 14;
         font-weight: 500;
         margin: 0;
     }
-    .header-info__position{
+
+    .header-info__position {
         font-size: 13px;
         font-weight: 400;
         margin: 0;
     }
-    .person__title{
+
+    .person__title {
         flex-direction: column;
         align-items: center;
     }
-    .main{
+
+    .main {
         margin-top: 60px;
     }
-    .person__gender{
+
+    .person__gender {
         display: none;
     }
-    .person__user-name{
-         text-align: center;        
+
+    .person__user-name {
+        text-align: center;
     }
-    .person__update{
+
+    .person__update {
         justify-content: center;
     }
-    .modal__slider{
+
+    .modal__slider {
         margin: 110px auto;
     }
-    .offer__box{
+
+    .offer__box {
         margin: 0 auto;
     }
-    .slider-line{
-        
 
+    .modal__next {
+        display: none;
     }
-    
+
+    .modal__prev {
+        display: none;
+    }
+
+    .slider-next {
+        display: none;
+    }
+
 }
