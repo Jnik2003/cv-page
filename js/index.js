@@ -11,6 +11,8 @@ window.onload = function() {
     let imgs = document.querySelectorAll('.slider-img')
 
 
+
+
     let offset = 0;
     sliderNext.addEventListener('click', fNext);
 
@@ -130,6 +132,47 @@ window.onload = function() {
                 function rollSlider() {
                     document.querySelector('.modal__slider-line').style.transform = `translateX(-${count * width}px`;
                 }
+
+                // --- добавим свайп ---------
+                function startSwipe() {
+                    modalSlider.addEventListener('touchstart', handleTouchStart, false);
+                    console.log(slider)
+                    modalSlider.addEventListener('touchmove', handleTouchMove, false);
+                }
+                startSwipe();
+
+                function stopSwipe() {
+                    modalSlider.removeEventListener('touchstart', handleTouchStart, false);
+                    console.log(slider)
+                    modalSlider.removeEventListener('touchmove', handleTouchMove, false);
+                }
+
+
+                function handleTouchStart(event) {
+                    // координалы тычка пальцем                     
+                    x1 = event.touches[0].clientX;
+                    y1 = event.touches[0].clientY;
+
+                }
+
+                function handleTouchMove(event) {
+                    if (!x1 || !y1) {
+                        return;
+                    }
+                    x2 = event.touches[0].clientX;
+                    y2 = event.touches[0].clientY;
+                    // clearInterval(timer);
+                    if (x2 < x1 && Math.abs(y1 - y2) < 7) {
+                        modalNext();
+                        stopSwipe();
+                        setTimeout(startSwipe, 300)
+                    }
+                    if (x2 > x1 && Math.abs(y1 - y2) < 7) {
+                        modalPrev();
+                         stopSwipe();
+                        setTimeout(startSwipe, 300)
+                    }
+                }
             })
             .then(() => {
                 setTimeout(coordClose, 1500)
@@ -181,7 +224,7 @@ window.onload = function() {
     // offerBtn2.addEventListener('click', menu);
 
     function menu() {
-      
+
         let offerLists = document.querySelectorAll('.offer__list')
         let offerImgs = document.querySelectorAll('.offer__img')
         let offerTexts = document.querySelectorAll('.offer__text')
@@ -303,7 +346,7 @@ window.onload = function() {
 
     save.addEventListener('click', saveNote);
 
-    function saveNote() {        
+    function saveNote() {
         localStorage.setItem('note', noteBody.value)
         closeNote()
     }
@@ -332,14 +375,14 @@ window.onload = function() {
             salarySumm.style.fontWeight = '600';
             headerInfo.insertAdjacentElement('afterEnd', personIcons);
         } else {
-            
+
             // setTimeout(() => {
-                offer.insertAdjacentElement('afterBegin', offerBox);
-                salary.insertAdjacentElement('afterBegin', salarySumm);
-                salarySumm.style.fontSize = '28px';
-                salarySumm.style.fontWeight = '500';
-                offerBox.insertAdjacentElement('afterEnd', offerHistory);
-                personUserName.insertAdjacentElement('afterEnd', personIcons);
+            offer.insertAdjacentElement('afterBegin', offerBox);
+            salary.insertAdjacentElement('afterBegin', salarySumm);
+            salarySumm.style.fontSize = '28px';
+            salarySumm.style.fontWeight = '500';
+            offerBox.insertAdjacentElement('afterEnd', offerHistory);
+            personUserName.insertAdjacentElement('afterEnd', personIcons);
 
             // }, 100)
 
