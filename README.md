@@ -9,8 +9,8 @@
 с 10.02.22 - 20.02.22 
 https://wakatime.com/@973767da-c324-43a3-ba1c-255485a745ed/projects/prdykifeiy?start=2022-02-15&end=2022-02-21
 
-## Не реализовано
-Deploy https://jnik2003.github.io/cv-page/
+## Deploy
+https://jnik2003.github.io/cv-page/
 
 ## Не реализовано
 
